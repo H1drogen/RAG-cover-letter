@@ -7,25 +7,22 @@ def load_context_docs(doc_path: str) -> list[Document]:
     """Compile all documentation in the data directory as langchainDocuments."""
     paths = [doc_path]
 
-    loader = TextLoader("data/add_your_data.txt")
+    loader = TextLoader(doc_path)
     docs = loader.load()
 
-    for path in paths:
-        url = f"{DOCS_BASE}/{path}.md"
-        try:
-            response = requests.get(url, timeout=20)
-            response.raise_for_status()
-        except requests.RequestException:
-            continue
-        source = f"{DOCS_BASE}/{path}"
-        docs.append(
-            Document(page_content=response.text, metadata={"source": source})
-        )
+    # for path in paths:
+    #     url = f"{DOCS_BASE}/{path}.md"
+    #     try:
+    #         response = requests.get(url, timeout=20)
+    #         response.raise_for_status()
+    #     except requests.RequestException:
+    #         continue
+    #     source = f"{DOCS_BASE}/{path}"
+    #     docs.append(
+    #         Document(page_content=response.text, metadata={"source": source})
+    #     )
     return docs
 
-
-docs = load_langchain_docs()
-print(f"Loaded {len(docs)} documentation pages.")
 
 def split_docs(docs: list[Document]):
     chunks = RecursiveCharacterTextSplitter(
