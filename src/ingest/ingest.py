@@ -1,28 +1,21 @@
+from pathlib import Path
+
 from langchain import *
 from langchain_community.document_loaders import TextLoader
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def load_context_docs(doc_path: str) -> list[Document]:
-    """Compile all documentation in the data directory as langchainDocuments."""
-    paths = [doc_path]
+    """Load every text file under a specified path recursively."""
+    root = Path(doc_path)
+    if root.is_file():
+        return TextLoader(str(root)).load()
 
-    loader = TextLoader(doc_path)
-    docs = loader.load()
+    docs: list[Document] = []
+    for file_path in sorted(p for p in root.rglob("*") if p.is_file()):
+        docs.extend(TextLoader(file_path).load())
 
-    # for path in paths:
-    #     url = f"{DOCS_BASE}/{path}.md"
-    #     try:
-    #         response = requests.get(url, timeout=20)
-    #         response.raise_for_status()
-    #     except requests.RequestException:
-    #         continue
-    #     source = f"{DOCS_BASE}/{path}"
-    #     docs.append(
-    #         Document(page_content=response.text, metadata={"source": source})
-    #     )
     return docs
-
 
 def split_docs(docs: list[Document]):
     chunks = RecursiveCharacterTextSplitter(
