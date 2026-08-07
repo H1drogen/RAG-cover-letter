@@ -211,6 +211,46 @@ files = [
 ]
 
 [[package]]
+name = "boto3"
+version = "1.43.67"
+description = "The AWS SDK for Python"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "boto3-1.43.67-py3-none-any.whl", hash = "sha256:082cf9df068168cb44028a1703822374c1eb7e48fa49470d7e8a76f0c977d0bc"},
+    {file = "boto3-1.43.67.tar.gz", hash = "sha256:75fe983b70d39cfdc274dc51f9bb02b8a0a104bdad4fa073c1af85a35e707c91"},
+]
+
+[package.dependencies]
+botocore = ">=1.43.67,<1.44.0"
+jmespath = ">=0.7.1,<2.0.0"
+s3transfer = ">=0.19.0,<0.20.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
+
+[[package]]
+name = "botocore"
+version = "1.43.67"
+description = "Low-level, data-driven core of boto 3."
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "botocore-1.43.67-py3-none-any.whl", hash = "sha256:48ab8e9fac26fbc2a700d57010251003e6a5f731cf74d8540fb796bc8f3fc0ef"},
+    {file = "botocore-1.43.67.tar.gz", hash = "sha256:6fe5cfa0c8676ba809efe505b618ec00f30d1af2d014bf316a7aa4ee86accb20"},
+]
+
+[package.dependencies]
+jmespath = ">=0.7.1,<2.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = ">=1.25.4,<2.2.0 || >2.2.0,<3"
+
+[package.extras]
+crt = ["awscrt (==0.36.0)"]
+
+[[package]]
 name = "certifi"
 version = "2026.7.22"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -658,6 +698,18 @@ files = [
 all = ["mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.6.2)"]
 
 [[package]]
+name = "jmespath"
+version = "1.1.0"
+description = "JSON Matching Expressions"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "jmespath-1.1.0-py3-none-any.whl", hash = "sha256:a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64"},
+    {file = "jmespath-1.1.0.tar.gz", hash = "sha256:472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"},
+]
+
+[[package]]
 name = "jsonpatch"
 version = "1.33"
 description = "Apply JSON-Patches (RFC 6902)"
@@ -720,6 +772,31 @@ openai = ["langchain-openai"]
 perplexity = ["langchain-perplexity"]
 together = ["langchain-together"]
 xai = ["langchain-xai"]
+
+[[package]]
+name = "langchain-aws"
+version = "1.7.0"
+description = "An integration package connecting AWS and LangChain"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "langchain_aws-1.7.0-py3-none-any.whl", hash = "sha256:25ccaebeec0bd718df4a1dce44c725591e177690bc19df7caa0cd2d601df27a0"},
+    {file = "langchain_aws-1.7.0.tar.gz", hash = "sha256:e4e8d578b4be8fd3ad970373fc72c3e321fea7f955cb6c075464e30636ec583d"},
+]
+
+[package.dependencies]
+boto3 = ">=1.43.32"
+langchain-core = ">=1.4.7"
+numpy = ">=1.0.0,<3"
+pydantic = ">=2.10.6,<3"
+
+[package.extras]
+anthropic = ["anthropic[bedrock]", "langchain-anthropic"]
+nova-sonic = ["aws-sdk-bedrock-runtime ; python_version >= \"3.12\""]
+openai = ["langchain-openai (>=1.0.0)", "openai (>=1.106.0)"]
+tools = ["beautifulsoup4 (>=4.13.4)", "bedrock-agentcore (>=1.4.0) ; python_version >= \"3.10\"", "playwright (>=1.53.0)"]
+valkey = ["valkey-glide-sync (>=2.0.0)"]
 
 [[package]]
 name = "langchain-classic"
@@ -1628,6 +1705,21 @@ toml = ["tomli (>=2.0.1)"]
 yaml = ["pyyaml (>=6.0.1)"]
 
 [[package]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+description = "Extensions to the standard Python datetime module"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+groups = ["main"]
+files = [
+    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
+    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
+]
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
 name = "python-dotenv"
 version = "1.2.2"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -1761,6 +1853,36 @@ files = [
 
 [package.dependencies]
 requests = ">=2.0.1,<3.0.0"
+
+[[package]]
+name = "s3transfer"
+version = "0.19.2"
+description = "An Amazon S3 Transfer Manager"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "s3transfer-0.19.2-py3-none-any.whl", hash = "sha256:d8168eccca828cbb2cd573675333f3bddd254313a9c42494b84c76b539e8ba25"},
+    {file = "s3transfer-0.19.2.tar.gz", hash = "sha256:ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"},
+]
+
+[package.dependencies]
+botocore = ">=1.37.4,<2.0a.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.37.4,<2.0a.0)"]
+
+[[package]]
+name = "six"
+version = "1.17.0"
+description = "Python 2 and 3 compatibility utilities"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+groups = ["main"]
+files = [
+    {file = "six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"},
+    {file = "six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"},
+]
 
 [[package]]
 name = "sniffio"
@@ -2546,4 +2668,4 @@ cffi = ["cffi (>=1.17,<2.0) ; platform_python_implementation != \"PyPy\" and pyt
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<4.0.0"
-content-hash = "fe6801c94bc7ec57924bf9933a10c6bbb66bbb671ec0309c6d43e11495177309"
+content-hash = "fc5aa0ab0ec80effd2917f8c95f8d654dd335ef96d83079a8f55499fac38ee25"
