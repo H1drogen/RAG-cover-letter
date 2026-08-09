@@ -1,4 +1,4 @@
-from ingest import load_context_docs
+from indexing.ingest import load_context_docs
 
 
 def test_load_context_docs_recursively_loads_all_text_files(tmp_path):

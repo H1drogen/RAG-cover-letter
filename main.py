@@ -1,5 +1,5 @@
-from ingest import load_context_docs, split_docs
-from embed import get_embeddings, EmbeddingConfig
+from indexing.ingest import load_context_docs, split_docs
+from indexing.embed import get_embeddings, EmbeddingConfig
 
 def main():
 

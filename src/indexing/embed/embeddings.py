@@ -22,7 +22,7 @@ class EmbeddingConfig:
 
 
 @lru_cache(maxsize=None)
-def get_embeddings(config: EmbeddingConfig = EmbeddingConfig()) -> Embeddings:
+def get_embeddings(config: EmbeddingConfig) -> Embeddings:
     if config.provider == "openai":
         return OpenAIEmbeddings(
             model=config.openai_model,
