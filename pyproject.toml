@@ -9,4 +9,5 @@ dependencies = [
   "langchain-community (>=0.4.2,<0.5.0)",
   "langchain-aws (>=1.7.0,<2.0.0)",
   "pytest (>=9.1.1,<10.0.0)",
+  "deepagents (>=0.7.5,<0.8.0)",
 ]
