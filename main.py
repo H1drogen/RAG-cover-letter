@@ -1,5 +1,10 @@
+from langchain_classic.chains.llm_summarization_checker.base import PROMPTS_DIR
+from langchain_core.messages import HumanMessage
+
+from agent.generation.agent import create_agent
 from indexing.ingest import load_context_docs, split_docs
 from indexing.embed import get_embeddings, EmbeddingConfig
+from indexing.embed import create_retriever, retrieve_content
 
 def main():
 
@@ -16,7 +21,34 @@ def main():
 
     print(docs)
 
+    retriever = create_retriever(docs, get_embeddings(config))
 
+    PROMPTS: dict[str, str] = {}
+
+    for path in sorted(PROMPTS_DIR.glob("*.txt")):
+        var_name = path.name
+        content = path.read_text(encoding="utf-8")
+        PROMPTS[var_name] = content
+
+    INSTRUCTIONS = (
+        PROMPTS["cover_letter.txt"]
+        + "\n\n"
+        + "=" * 80
+        + "\n\n"
+        + PROMPTS["subagent_delegation.txt"].format(
+            max_concurrent_analysts=3,
+        )
+    )
+
+    agent = create_agent(INSTRUCTIONS, [search_documentation], backend)
+
+    result = agent.invoke(
+        {"messages": [HumanMessage(content=EXAMPLE_QUERY)]}
+    )
+
+    for msg in result.get("messages", []):
+        if msg.text:
+            print(msg.text)
 
 if __name__ == "__main__":
     main()
