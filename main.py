@@ -5,8 +5,11 @@ from agent.generation.agent import create_agent
 from indexing.ingest import load_context_docs, split_docs
 from indexing.embed import get_embeddings, EmbeddingConfig
 from indexing.embed import create_retriever, retrieve_content
+import os
 
 def main():
+
+    os.environ("LANGSMITH_API_KEY")
 
     docs = load_context_docs("data/")
     docs = split_docs(docs)
@@ -14,10 +17,11 @@ def main():
 
     config = EmbeddingConfig(
         'bedrock',
-        "text-embedding-3-small", None, None,
-        "amazon.titan-embed-text-v1", None, None
+        bedrock_model_id= os.environ['BEDROCK_MODEL_ID'],
+        bedrock_profile_name= os.environ['BEDROCK_PROFILE_NAME'],
+        bedrock_region_name= os.environ['BEDROCK_REGION_NAME']
     )
-    get_embeddings(config)
+    embedding = get_embeddings(config)
 
     print(docs)
 
