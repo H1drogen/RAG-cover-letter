@@ -1,3 +1,4 @@
+import os
 from dataclasses import dataclass
 from functools import lru_cache
 from typing import Literal
@@ -6,19 +7,19 @@ from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_core.embeddings import Embeddings
 from langchain_aws import BedrockEmbeddings
 
-EmbeddingProvider = Literal["openai", "bedrock"]
 
 @dataclass(frozen=True)
 class EmbeddingConfig:
-    provider: EmbeddingProvider = "openai"
+    provider: Literal["openai", "bedrock"]
 
-    openai_model: str = "text-embedding-3-small"
-    openai_api_key: str | None = None
-    openai_base_url: str | None = None
+    openai_api_key: str | None
+    openai_base_url:  str | None
+    openai_model: str
 
-    bedrock_model_id: str = "amazon.titan-embed-text-v1"
-    bedrock_region_name: str | None = None
-    bedrock_profile_name: str | None = None
+
+    bedrock_region_name: str | None
+    bedrock_profile_name: str | None
+    bedrock_model_id: str
 
 
 @lru_cache(maxsize=None)
