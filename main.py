@@ -1,7 +1,9 @@
+from deepagents.backends import StateBackend
 from langchain_classic.chains.llm_summarization_checker.base import PROMPTS_DIR
 from langchain_core.messages import HumanMessage
 
 from agent.generation.agent import create_agent
+from agent.tools.search import search_content
 from indexing.ingest import load_context_docs, split_docs
 from indexing.embed import get_embeddings, EmbeddingConfig
 from indexing.embed import create_retriever, retrieve_content
@@ -16,10 +18,10 @@ def main():
 
 
     config = EmbeddingConfig(
-        'bedrock',
-        bedrock_model_id= os.environ['BEDROCK_MODEL_ID'],
-        bedrock_profile_name= os.environ['BEDROCK_PROFILE_NAME'],
-        bedrock_region_name= os.environ['BEDROCK_REGION_NAME']
+        'openai',
+        openai_api_key= os.environ['OPENAI_API_KEY'],
+        openai_base_url= os.environ['OPENAI_BASE_URL'],
+        openai_model= os.environ['OPENAI_MODEL']
     )
     embedding = get_embeddings(config)
 
@@ -44,7 +46,10 @@ def main():
         )
     )
 
-    agent = create_agent(INSTRUCTIONS, [search_documentation], backend)
+    EXAMPLE_QUERY = "How do I stream intermediate tool results from a subagent?"
+    backend = StateBackend()
+
+    agent = create_agent(INSTRUCTIONS, [search_content], backend)
 
     result = agent.invoke(
         {"messages": [HumanMessage(content=EXAMPLE_QUERY)]}
