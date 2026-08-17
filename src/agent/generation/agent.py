@@ -2,7 +2,6 @@ from deepagents import create_deep_agent
 from langchain.chat_models import init_chat_model
 
 def create_agent(instructions: str, tools, backend):
-    max_concurrent_analysts = 3
 
     CHUNK_ANALYST_INSTRUCTIONS = """You analyze retrieved documentation chunks.
 
