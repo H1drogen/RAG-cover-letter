@@ -4,7 +4,6 @@ from langchain_core.vectorstores import InMemoryVectorStore
 from langchain.tools import tool
 
 
-@lru_cache(maxsize=1)
 def create_retriever(doc_splits, embedding):
     """Create the vector store."""
     vectorstore = InMemoryVectorStore.from_documents(

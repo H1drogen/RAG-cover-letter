@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 from deepagents.backends import StateBackend
@@ -6,9 +8,7 @@ from langchain_core.messages import HumanMessage
 
 from agent.generation.agent import create_agent
 from agent.tools.search import search_content
-from indexing.ingest import load_context_docs, split_docs
-from indexing.embed import get_embeddings, EmbeddingConfig
-from indexing.embed import create_retriever, retrieve_content
+from src.indexing import *
 import os
 
 def main():
@@ -29,13 +29,13 @@ def main():
 
     docs = load_context_docs("data/")
     docs = split_docs(docs)
-    print(docs.content)
+    print(docs)
 
     retriever = create_retriever(docs, embedding)
 
     PROMPTS: dict[str, str] = {}
 
-    for path in sorted(PROMPTS_DIR.glob("*.txt")):
+    for path in Path('src/agent/prompts/').iterdir():
         var_name = path.name
         content = path.read_text(encoding="utf-8")
         PROMPTS[var_name] = content
@@ -45,7 +45,7 @@ def main():
         + "\n\n"
         + "=" * 80
         + "\n\n"
-        + PROMPTS["subagent_delegation.txt"].format(
+        + PROMPTS["deep_research.txt"].format(
             max_concurrent_analysts=3,
         )
     )
