@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+
 from deepagents.backends import StateBackend
 from langchain_classic.chains.llm_summarization_checker.base import PROMPTS_DIR
 from langchain_core.messages import HumanMessage
@@ -10,24 +12,26 @@ from indexing.embed import create_retriever, retrieve_content
 import os
 
 def main():
-
-    os.environ("LANGSMITH_API_KEY")
-
-    docs = load_context_docs("data/")
-    docs = split_docs(docs)
-
+    load_dotenv()
+    # os.environ("LANGSMITH_API_KEY")
 
     config = EmbeddingConfig(
         'openai',
-        openai_api_key= os.environ['OPENAI_API_KEY'],
-        openai_base_url= os.environ['OPENAI_BASE_URL'],
-        openai_model= os.environ['OPENAI_MODEL']
+        openai_api_key= os.getenv('OPENAI_API_KEY'),
+        openai_base_url= os.getenv('OPENAI_BASE_URL'),
+        openai_model= os.getenv('OPENAI_MODEL'),
+
+        bedrock_region_name= os.getenv('BEDROCK_REGION'),
+        bedrock_profile_name= os.getenv('BEDROCK_PROFILE'),
+        bedrock_model_id=os.getenv('BEDROCK_MODEL_ID')
     )
     embedding = get_embeddings(config)
 
-    print(docs)
+    docs = load_context_docs("data/")
+    docs = split_docs(docs)
+    print(docs.content)
 
-    retriever = create_retriever(docs, get_embeddings(config))
+    retriever = create_retriever(docs, embedding)
 
     PROMPTS: dict[str, str] = {}
 

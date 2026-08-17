@@ -14,12 +14,12 @@ class EmbeddingConfig:
 
     openai_api_key: str | None
     openai_base_url:  str | None
-    openai_model: str
+    openai_model: str | None
 
 
     bedrock_region_name: str | None
     bedrock_profile_name: str | None
-    bedrock_model_id: str
+    bedrock_model_id: str | None
 
 
 @lru_cache(maxsize=None)
@@ -28,7 +28,7 @@ def get_embeddings(config: EmbeddingConfig) -> Embeddings:
         return OpenAIEmbeddings(
             model=config.openai_model,
             api_key=config.openai_api_key,
-            base_url=config.openai_base_url,
+            # base_url=config.openai_base_url,
         )
 
     if config.provider == "bedrock":
@@ -37,5 +37,6 @@ def get_embeddings(config: EmbeddingConfig) -> Embeddings:
             region_name=config.bedrock_region_name,
             credentials_profile_name=config.bedrock_profile_name,
         )
+
 
     raise ValueError(f"Unsupported embedding provider: {config.provider}")
