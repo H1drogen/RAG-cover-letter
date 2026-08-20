@@ -1,7 +1,7 @@
 from deepagents import create_deep_agent
 from langchain.chat_models import init_chat_model
 
-def create_agent(instructions: str, tools, backend):
+def create_agent(instructions: str, tools):
 
     CHUNK_ANALYST_INSTRUCTIONS = """You analyze retrieved documentation chunks.
 
@@ -23,13 +23,12 @@ def create_agent(instructions: str, tools, backend):
         "system_prompt": CHUNK_ANALYST_INSTRUCTIONS,
     }
 
-    model = init_chat_model(model="anthropic:claude-sonnet-4-6")
+    model = init_chat_model(model="openai:gpt-5.5")
 
     agent = create_deep_agent(
         model=model,
-        tools=tools,
-        backend=backend,
         system_prompt=instructions,
+        tools=tools,
         subagents=[chunk_analyst_subagent],
     )
 
