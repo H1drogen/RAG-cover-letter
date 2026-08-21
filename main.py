@@ -32,6 +32,7 @@ def main():
     print(docs)
 
     retriever = create_retriever(docs, embedding)
+    bound_search = search_content.bind(retriever=retriever)
 
     PROMPTS: dict[str, str] = {}
 
@@ -41,7 +42,11 @@ def main():
         PROMPTS[var_name] = content
 
     INSTRUCTIONS = (
-        PROMPTS["cover_letter.txt"]
+        PROMPTS["cover_letter.txt"].format(
+            company_name="Samsung",
+            candidate_name="Simon Hossain",
+            role_title="Senior Engineer",
+        )
         + "\n\n"
         + "=" * 80
         + "\n\n"
@@ -51,15 +56,19 @@ def main():
     )
 
     EXAMPLE_QUERY = "How do I stream intermediate tool results from a subagent?"
-    backend = StateBackend()
 
-    agent = create_agent(INSTRUCTIONS, [search_content], backend)
+    internet_search = {"type": "web_search"}
+    agent = create_agent(INSTRUCTIONS, [search_content, internet_search])
 
     result = agent.invoke(
         {"messages": [HumanMessage(content=EXAMPLE_QUERY)]}
     )
 
     for msg in result.get("messages", []):
+        if "chunk-analyst" in str(msg.content):
+            print("✅ Chunk analyst processed RAG results")
+        if "/retrieved/" in str(msg.content):
+            print(f"✅ RAG FILES USED:\n{msg.content}")
         if msg.text:
             print(msg.text)
 
