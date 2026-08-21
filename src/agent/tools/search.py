@@ -3,13 +3,14 @@ import uuid
 from deepagents.backends import StateBackend
 from langchain.tools import tool
 
+from indexing import create_retriever
 from indexing.embed import vectorstore
 
 backend = StateBackend()
 
 
 @tool(parse_docstring=True)
-def search_content(query: str) -> str:
+def search_content(query: str, retriever) -> str:
     """Search documentation and save matching chunks to the agent filesystem.
 
     Args:
@@ -18,7 +19,7 @@ def search_content(query: str) -> str:
     Returns:
         File paths where retrieved chunks were saved under /retrieved/.
     """
-    retrieved_docs = vectorstore.retrieve_content(query, k=4)
+    retrieved_docs = retriever.invoke(query)
     batch_id = uuid.uuid4().hex[:8]
     uploads: list[tuple[str, bytes]] = []
     saved_paths: list[str] = []
