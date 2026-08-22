@@ -1,0 +1,9 @@
+Write a cover letter for {company_name} {role_title} that is tailored to the retrieved information.
+The cover letter should be written in a way that is relevant to the candidate's experience and skills, and should highlight the key responsibilities and qualifications for the role.
+The cover letter should also include any relevant information about the company culture, values, and mission.
+
+Job description:{job_description}
+Company:{company_name}
+Role:{role_title}
+Candidate:{candidate_name}
+RAG context:{rag_context}
