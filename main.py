@@ -32,7 +32,8 @@ def main():
     print(docs)
 
     retriever = create_retriever(docs, embedding)
-    bound_search = search_content.bind(retriever=retriever)
+    retriever_tool = retrieve_content
+    # bound_search = search_content.bind(retriever=retriever)
 
     PROMPTS: dict[str, str] = {}
 
@@ -42,26 +43,36 @@ def main():
         PROMPTS[var_name] = content
 
     INSTRUCTIONS = (
-        PROMPTS["cover_letter.txt"].format(
-            company_name="Samsung",
-            candidate_name="Simon Hossain",
-            role_title="Senior Engineer",
-        )
+        PROMPTS["cover_letter.txt"]
         + "\n\n"
         + "=" * 80
         + "\n\n"
-        + PROMPTS["deep_research.txt"].format(
-            max_concurrent_analysts=3,
-        )
+        + PROMPTS["deep_research.txt"].format()
     )
 
-    EXAMPLE_QUERY = "How do I stream intermediate tool results from a subagent?"
-
+    HUMAN_QUERY = PROMPTS["human_prompt.txt"].format(
+        job_description=r"""
+        At Citadel, our engineers work in small teams to turn the best ideas into high-performing and resilient technology. With short development cycles, work rapidly goes into production. As an engineer, you can create system architectures, develop platforms and build web frameworks. You’ll have access to state-of-the-art tools and apply innovative techniques including distributed computing, natural language processing, machine learning and more.
+        As an intern, you’ll get to challenge the impossible in technology through an 11-week program that will allow you to collaborate and connect with senior team members. In addition, you’ll get the opportunity to network and socialize with peers throughout the internship.
+        Your Objectives:
+        Create technological tools that bring trading strategies to life
+        Develop high-performance, large data research platforms
+        Work in small teams to build the future of finance
+        Your Skills & Talents:
+        Bachelor's, master's or PhD in computer science, computer engineering or related fields
+        Exceptional programming and design skills
+        Strong analytical skills and familiarity with probability and statistics
+        Ability to communicate effectively in a collaborative, complex and highly technical team environment
+        Intellectual curiosity and passion for solving challenging problems using technology
+        """,
+        company_name="Citadel",
+        role_title="Software Engineer – Intern (Europe)",
+    )
     internet_search = {"type": "web_search"}
-    agent = create_agent(INSTRUCTIONS, [search_content, internet_search])
+    agent = create_agent(INSTRUCTIONS, [retriever_tool, internet_search])
 
     result = agent.invoke(
-        {"messages": [HumanMessage(content=EXAMPLE_QUERY)]}
+        {"messages": [HumanMessage(content=HUMAN_QUERY)]}
     )
 
     for msg in result.get("messages", []):
