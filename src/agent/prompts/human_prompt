@@ -1,9 +1,23 @@
-Write a cover letter for {company_name} {role_title} that is tailored to the retrieved information.
-The cover letter should be written in a way that is relevant to the candidate's experience and skills, and should highlight the key responsibilities and qualifications for the role.
-The cover letter should also include any relevant information about the company culture, values, and mission.
+You are reviewing candidate materials for a cover letter.
 
-Job description:{job_description}
-Company:{company_name}
-Role:{role_title}
-Candidate:{candidate_name}
-RAG context:{rag_context}
+JOB DESCRIPTION:
+{job_description}
+
+TARGET COMPANY: {company_name}
+TARGET ROLE: {role_title}
+
+CANDIDATE CONTEXT (from RAG retrieval):
+{retrieved_context}
+
+COMPANY RESEARCH (from web search):
+{company_research}
+
+TASK: 
+Using ONLY the evidence provided in the Candidate Context, write a compelling 
+cover letter that:
+1. Shows understanding of {company_name}'s mission and culture
+2. Matches 3+ key job requirements to specific candidate achievements
+3. Demonstrates the soft/technical skills needed for success
+4. Tells a coherent narrative of why this candidate is perfect for this role
+
+Remember: Ground every claim in the provided context. Do not invent experience.
