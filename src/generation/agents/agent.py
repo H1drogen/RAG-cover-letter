@@ -102,7 +102,8 @@ def create_agent(instructions: str, tools):
         subagents=[
             background_researcher,
             news_researcher,
-            culture_researcher,],
+            culture_researcher
+        ],
     )
 
     return agent

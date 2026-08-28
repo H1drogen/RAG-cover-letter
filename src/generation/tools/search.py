@@ -11,7 +11,7 @@ backend = StateBackend()
 
 @tool(parse_docstring=True)
 def search_content(query: str, retriever) -> str:
-    """Search documentation and save matching chunks to the agent filesystem.
+    """Search documentation and save matching chunks to the agents filesystem.
 
     Args:
         query: Natural language search query.
