@@ -4,7 +4,7 @@ This module demonstrates building a research agent using the deepagents package
 with custom tools for web search and strategic thinking.
 """
 
-from researcher_instructions import (
+from instructions import (
     RESEARCHER_INSTRUCTIONS,
     RESEARCH_WORKFLOW_INSTRUCTIONS,
     SUBAGENT_DELEGATION_INSTRUCTIONS,
