@@ -2833,6 +2833,21 @@ pymysql = ["pymysql"]
 sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
+name = "tavily"
+version = "1.1.0"
+description = "Simple API TAVILY"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "tavily-1.1.0.tar.gz", hash = "sha256:7730bf10c925dc0d0d84f27a8979de842ecf88c2882183409addd855e27d8fab"},
+]
+
+[package.dependencies]
+aiohttp = "*"
+requests = "*"
+
+[[package]]
 name = "tenacity"
 version = "9.1.4"
 description = "Retry code until it succeeds"
@@ -3630,4 +3645,4 @@ cffi = ["cffi (>=1.17,<2.0) ; platform_python_implementation != \"PyPy\" and pyt
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<4.0.0"
-content-hash = "da2a0e17a74cf3fac566d20c7af770936463c220c40e4c07193e8d45839bcc9f"
+content-hash = "9bc68356b8f86ff296dde7b2da1a04d071e7ca7f6cf0c8e8eaaa59a4e47c911e"
