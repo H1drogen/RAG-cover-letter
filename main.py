@@ -6,8 +6,8 @@ from deepagents.backends import StateBackend
 from langchain_classic.chains.llm_summarization_checker.base import PROMPTS_DIR
 from langchain_core.messages import HumanMessage
 
-from agent.generation.agent import create_agent
-from agent.tools.search import search_content
+from generation.agents.agent import create_agent
+from generation.tools.search import search_content
 from src.indexing import *
 import os
 
@@ -59,16 +59,16 @@ def main():
     ])
     retriever_tool = retrieve_content
     # bound_search = search_content.bind(retriever=retriever)
+    print(candidate_evidence)
 
     PROMPTS: dict[str, str] = {}
 
-    for path in Path('src/agent/prompts/').iterdir():
+    for path in Path('src/generation/prompts/').iterdir():
         var_name = path.name
         content = path.read_text(encoding="utf-8")
         PROMPTS[var_name] = content
 
-    INSTRUCTIONS = (
-        PROMPTS["cover_letter.txt"]
+    SYSTEM_PROMPT = (
         + "\n\n"
         + "=" * 80
         + "\n\n"
@@ -76,7 +76,7 @@ def main():
     )
 
     internet_search = {"type": "web_search"}
-    agent = create_agent(INSTRUCTIONS, [retriever_tool, internet_search])
+    agent = create_agent(SYSTEM_PROMPT, [retriever_tool, internet_search])
 
 
     HUMAN_QUERY = PROMPTS["human_prompt.txt"].format(
@@ -84,6 +84,7 @@ def main():
         company_name="Citadel",
         role_title="Software Engineer – Intern (Europe)",
         retrieved_context=candidate_evidence,
+        company_research=
     )
 
     result = agent.invoke(
