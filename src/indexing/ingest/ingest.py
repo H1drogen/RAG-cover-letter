@@ -5,14 +5,95 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 TECH_SKILLS = {
-    'python', 'aws', 's3', 'boto3', 'react', 'javascript', 'typescript',
-    'kubernetes', 'docker', 'api', 'sql', 'redis', 'microservices',
-    'cloudwatch', 'debugging', 'git', 'ci/cd', 'sdk', 'sdk'
+    "Java OOD",
+    "Spring Web",
+    "Spring Boot",
+    "RESTful APIs",
+    "JUnit",
+    "Mockito",
+    "JDBC",
+    "JPA",
+    "SQL",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "C#",
+    "ASP.NET",
+    "Python",
+    "Poetry",
+    "Pylint",
+    "Pytest",
+    "PyTorch",
+    "PyAgrum",
+    "MatPlotLib",
+    "Terraform",
+    "Docker",
+    "AWS",
+    "ECS",
+    "ECR",
+    "EC2 Fargate",
+    "S3",
+    "CloudFront",
+    "CloudWatch",
+    "Cognito",
+    "Secrets Manager",
+    "DynamoDB",
+    "Lambda",
+    "Github",
+    "Jira",
+    "networking",
+    "TCP/IP",
+    "HTTPS",
+    "DNS",
+    "database",
+    "normalisation",
+    "data",
+    "ETL",
+    "TDD",
+    "agile",
+    "DevOps",
+    "CI/CD",
+    "microservices",
+    "machine learning",
+    "supervised learning",
+    "unsupervised learning",
+    "reinforcement learning"
 }
 
 SOFT_SKILLS = {
-    'leadership', 'teamwork', 'communication', 'problem-solving',
-    'resilience', 'collaboration', 'analytical', 'strategic thinking'
+    "communication",
+    "interpersonal",
+    "teamwork",
+    "collaboration",
+    "empathy",
+    "diplomacy",
+    "adaptability",
+    "flexibility",
+    "willingness to learn",
+    "fast learner",
+    "resilience",
+    "problem-solving",
+    "analysis",
+    "leadership",
+    "decision making",
+    "delegation",
+    "coaching",
+    "time",
+    "prioritise",
+    "organization",
+    "planning",
+    "multi-tasking",
+    "meeting deadlines",
+    "attention to detail",
+    "creativity",
+    "innovation",
+    "thinking",
+    "curious",
+    "language",
+    "professionalism"
+
 }
 
 def load_context_docs(doc_path: str) -> list[Document]:
@@ -37,18 +118,18 @@ def extract_metadata(text: str) -> dict:
     skills = [s for s in TECH_SKILLS if s in text_lower]
     soft_skills = [s for s in SOFT_SKILLS if s in text_lower]
 
-    has_impact = any(
-        word in text_lower
-        for word in ['won', 'achieved', 'delivered', 'improved', 'reduced',
-                     'increased', 'first place', 'finalist', 'silver', 'gold']
-    )
+    # has_impact = any(
+    #     word in text_lower
+    #     for word in ['won', 'achieved', 'delivered', 'improved', 'reduced',
+    #                  'increased', 'first place', 'finalist', 'silver', 'gold']
+    # )
 
     achievement_type = 'technical' if skills else ('leadership' if any(w in text_lower for w in ['team', 'president', 'led', 'managed']) else 'general')
 
     return {
         'technical_skills': skills,
         'soft_skills': soft_skills,
-        'has_quantified_impact': has_impact,
+        # 'has_quantified_impact': has_impact,
         'achievement_type': achievement_type,
     }
 
@@ -65,11 +146,9 @@ def split_docs(docs: list[Document]) -> list[Document]:
 
         # Split at section headers (lines starting with capital letter, no bullet)
         # This keeps related achievements together
-        sections = re.split(r'\n(?=[A-Z][a-zA-Z\s]+)\n', text)
+        sections = [p.strip() for p in re.split(r'\n\s*\n+', text) if p.strip()]
 
         for section in sections:
-            if len(section.strip()) < 100:
-                continue
 
             # Keep small sections whole
             if len(section) <= 1800:
