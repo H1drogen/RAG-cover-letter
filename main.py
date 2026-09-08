@@ -33,6 +33,8 @@ def main():
 
     retriever = create_retriever(docs, embedding)
 
+    company_name = "Citadel"
+    role_title = "Software Engineer – Intern (Europe)"
     job_description = r"""
     At Citadel, our engineers work in small teams to turn the best ideas into high-performing and resilient technology. With short development cycles, work rapidly goes into production. As an engineer, you can create system architectures, develop platforms and build web frameworks. You’ll have access to state-of-the-art tools and apply innovative techniques including distributed computing, natural language processing, machine learning and more.
     As an intern, you’ll get to challenge the impossible in technology through an 11-week program that will allow you to collaborate and connect with senior team members. In addition, you’ll get the opportunity to network and socialize with peers throughout the internship.
@@ -49,42 +51,48 @@ def main():
     """,
 
     retrieved_context = retriever.invoke(
-        f"{job_description}\n\nFind the most relevant candidate experiences, "
+        f"{job_description}\n\nFind the most relevant candidate experiences based on this job description, "
         "skills, projects, and achievements"
     )
 
     candidate_evidence = "\n".join([
-        f"- {doc.page_content[:200]}..."
+        f"- {doc.page_content}..."
         for doc in (retrieved_context if isinstance(retrieved_context, list) else [retrieved_context])
     ])
-    retriever_tool = retrieve_content
-    # bound_search = search_content.bind(retriever=retriever)
-    print(candidate_evidence)
 
+    with open(f"output/RAG_context.txt", "w") as f:
+        f.write(candidate_evidence)
+
+    # The below tools cannot be created because the current architecture loads context immediately into context window, instead of allowing the agent to delegate and control chunking retrieval. This is a limitation of the current implementation and will be addressed in future iterations.
+    # retriever_tool = retrieve_content
+    # bound_search = search_content.bind(retriever=retriever)
     PROMPTS: dict[str, str] = {}
 
     for path in Path('src/generation/prompts/').iterdir():
-        var_name = path.name
-        content = path.read_text(encoding="utf-8")
-        PROMPTS[var_name] = content
+        if not path.is_dir():
+            var_name = path.name
+            content = path.read_text(encoding="utf-8")
+            PROMPTS[var_name] = content
 
     SYSTEM_PROMPT = (
         # + "\n\n"
         # + "=" * 80
         # + "\n\n" +
-        PROMPTS["sys_cover_letter.txt"].format()
+        PROMPTS["sys_cover_letter.txt"].format(
+            job_description=job_description,
+
+        )
     )
 
     internet_search = {"type": "web_search"}
-    agent = create_agent(SYSTEM_PROMPT, [retriever_tool, internet_search])
+    agent = create_agent(SYSTEM_PROMPT, [internet_search])
 
 
     HUMAN_QUERY = PROMPTS["human_prompt.txt"].format(
         job_description=job_description,
-        company_name="Citadel",
-        role_title="Software Engineer – Intern (Europe)",
+        company_name=company_name,
+        role_title=role_title,
         retrieved_context=candidate_evidence,
-        company_research=
     )
 
     result = agent.invoke(
@@ -98,6 +106,8 @@ def main():
             print(f"✅ RAG FILES USED:\n{msg.content}")
         if msg.text:
             print(msg.text)
+            with open(f"output/cover_letter.txt", "w") as f:
+                f.write(msg.text)
 
 if __name__ == "__main__":
     main()
