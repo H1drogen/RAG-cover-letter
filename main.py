@@ -69,10 +69,10 @@ def main():
         PROMPTS[var_name] = content
 
     SYSTEM_PROMPT = (
-        + "\n\n"
-        + "=" * 80
-        + "\n\n"
-        + PROMPTS["deep_research.txt"].format()
+        # + "\n\n"
+        # + "=" * 80
+        # + "\n\n" +
+        PROMPTS["sys_cover_letter.txt"].format()
     )
 
     internet_search = {"type": "web_search"}

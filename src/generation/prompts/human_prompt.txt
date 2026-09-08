@@ -16,8 +16,6 @@ TASK:
 Using ONLY the evidence provided in the Candidate Context, write a compelling 
 cover letter that:
 1. Shows understanding of {company_name}'s mission and culture
-2. Matches 3+ key job requirements to specific candidate achievements
+2. Matches key job requirements to specific candidate achievements
 3. Demonstrates the soft/technical skills needed for success
 4. Tells a coherent narrative of why this candidate is perfect for this role
-
-Remember: Ground every claim in the provided context. Do not invent experience.
