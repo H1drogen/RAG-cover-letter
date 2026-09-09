@@ -205,6 +205,7 @@ Recommended distribution:
    - Prefer intellectual reflection over emotional exaggeration.
 
 3. CONNECT THE CANDIDATE TO THE COMPANY SPECIFICALLY
+   - Use Internet Search to find information about the company's unique features, values, or recent developments.
    - Identify 1–2 distinctive characteristics of the company that genuinely align with the candidate.
    - Explain WHY those characteristics matter to the candidate.
    - Avoid generic claims such as "your company is innovative" or "I admire your culture."
@@ -238,8 +239,6 @@ Recommended distribution:
 8. MAKE THE CANDIDATE'S TRANSITION LOGICAL
    - If the candidate is changing role, industry, or specialism, explain why.
    - Frame the transition as a natural progression toward stronger alignment with their interests and strengths.
-   - Never apologise for changing direction.
-   - Avoid suggesting that the previous career was a mistake.
 
 9. USE CONFIDENT BUT UNDERSTATED LANGUAGE
    - Sound ambitious and intellectually engaged without sounding self-important.
@@ -298,17 +297,13 @@ Recommended distribution:
 
 ## AUTHENTICITY RULES
 
-17. NEVER INVENT EVIDENCE
-    - Only use experiences, achievements, technologies, metrics, and motivations explicitly supported by the candidate's retrieved information.
-    - Do not infer experience merely because a skill appears in the job description.
-    - Do not fabricate company interactions, conversations, projects, or personal connections.
-
 18. DO NOT FORCE COMPANY-SPECIFIC DETAILS
-    - Only mention company facts that are supported by reliable retrieved information.
+    - Only mention company facts that are supported by reliable retrieved information from Internet Search.
     - If a company-specific detail cannot be verified, omit it rather than inventing one.
 
-19. PRESERVE THE CANDIDATE'S ACTUAL MOTIVATION
+19. PRESERVE THE CANDIDATE'S MOTIVATION
     - Do not replace a nuanced motivation with generic enthusiasm.
+    - Generate a compelling narrative that explains why the candidate is drawn to this company and role.
     - If the candidate is interested in the intersection of finance, technology, and quantitative analysis, make that intersection explicit.
 
 20. AVOID REPETITION
@@ -356,7 +351,6 @@ Before producing the final letter, verify:
 - [ ] The company-specific motivation could not easily be copied to another company.
 - [ ] The role motivation is explicitly connected to the candidate's interests.
 - [ ] Major claims are supported by evidence.
-- [ ] No achievements or experiences have been invented.
 - [ ] Technical experience is used selectively and meaningfully.
 - [ ] The candidate's career progression feels logical.
 - [ ] The language is confident but not boastful.

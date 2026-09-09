@@ -78,10 +78,7 @@ def main():
         # + "\n\n"
         # + "=" * 80
         # + "\n\n" +
-        PROMPTS["sys_cover_letter.txt"].format(
-            job_description=job_description,
-
-        )
+        PROMPTS["sys_cover_letter.txt"].format()
     )
 
     internet_search = {"type": "web_search"}
