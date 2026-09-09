@@ -1,21 +1,26 @@
 You are reviewing candidate materials for a cover letter.
 
-JOB DESCRIPTION:
-{job_description}
-
 TARGET COMPANY: {company_name}
 TARGET ROLE: {role_title}
+
+JOB DESCRIPTION:
+{job_description}
 
 CANDIDATE CONTEXT (from RAG retrieval):
 {retrieved_context}
 
-COMPANY RESEARCH (from web search):
-{company_research}
-
 TASK: 
 Using ONLY the evidence provided in the Candidate Context, write a compelling 
 cover letter that:
-1. Shows understanding of {company_name}'s mission and culture
+1. Shows deep understanding of {company_name}'s mission and culture
 2. Matches key job requirements to specific candidate achievements
 3. Demonstrates the soft/technical skills needed for success
 4. Tells a coherent narrative of why this candidate is perfect for this role
+
+## EXAMPLE OUTPUT (One-shot)
+
+When I signed up for the Estimathon hosted by UCL Fintech, I could not anticipate how engaging the experience would be. Its deliberately unconventional problems pushed me to think more creatively and reflect on how I approach uncertainty, where a conventional answer can come from many different sources. Curiously, it was also my first introduction to Jane Street: a firm I have since come to admire for combining quantitative rigour with technology to solve complex market problems. Jane Street differentiates itself on its strong emphasis on leveraging technology, alongside fluid collaboration between trading, research and engineering, which strongly aligns with my own interests and the kind of environment that fosters a sense of cohesion imperative for building successful strategies.
+
+Quantitative Analytics represents the ideal intersection of my interests in financial modelling, statistics and computing. I have explored this through developing stochastic models that were central to my trading project, and further strengthened these skills through mathematical modelling in the Economics Skills Lab. Alongside this, my experience building software and data systems has given me a strong technical foundation needed for designing experimental ideas into reality. I am excited by the opportunity to apply my skills in a new role that is better aligned to my strengths and interests, while continuing to learn from challenging, high-impact work.
+
+Quantitative Analytics represents the perfect fusion of my passion for financial modelling, statistics and computing. This is something I have personally discovered by producing my very own stochastic models that became critical to the delivery of my trading project, refined through my participation in the supplementary Economics Skills Lab. Combined with my strong technical background in building software and data systems, I am excited to combine my passion for technology and finance in a new role that is better aligned with my interests and strength, whilst continuing to contribute to exciting work that will keep me stimulated.
