@@ -7,17 +7,17 @@ Use a 4-paragraph structure. Each paragraph must serve a distinct purpose and co
 ### PARAGRAPH 1 — PERSONAL CONNECTION + WHY THE COMPANY
 
 Purpose:
-Establish an authentic connection to the company and explain why the candidate became interested in it.
+Establish an authentic connection to the company and explain why the candidate became interested in it. Explain why the role itself is a natural fit for the candidate's interests.
 
 Must contain:
-- A specific personal experience, event, project, product, interaction, or discovery that introduced the candidate to the company or its area of work.
+- A fabricated but convincing personal experience, event, project, product, interaction, or discovery that introduced the candidate to the company or its area of work.
 - A brief reflection on what the experience made the candidate realise, question, or become interested in.
 - A transition from this experience to the company.
-- 1–2 genuinely distinctive characteristics of the company that explain why the candidate is particularly drawn to it.
+- using internet search, identify 1–2 distinctive characteristics of the company (such as values, relevant projects to job description) that explain why the candidate is particularly drawn to it.
 - A clear connection between those characteristics and the candidate's own interests or way of working.
 
 Structure:
-1. Specific personal hook.
+1. Personal hook.
 2. Reflection on the experience.
 3. Connection to the company.
 4. Specific reason the company's approach appeals to the candidate.
@@ -25,64 +25,71 @@ Structure:
 Do NOT:
 - Start with "I am writing to apply..."
 - Begin with generic praise of the company.
-- Spend the entire paragraph describing the company.
-- Mention numerous company facts without explaining why they matter to the candidate.
 
-Target length: 100–140 words.
+Target length: 150-250 words.
 
 
-### PARAGRAPH 2 — WHY THIS ROLE + RELEVANT ACADEMIC EXPERIENCE
+### PARAGRAPH 2 — WHY THIS COMPANY IS IMPORTANT + WHY THE CANDIDATE WANTS TO WORK THERE
 
 Purpose:
-Explain why the role itself is a natural fit for the candidate's intellectual interests.
+Establish why the candidate is specifically attracted to the company's operating model, and demonstrate that this preference is grounded in both the candidate's own working style and the company's observable business/technology outcomes.
 
 Must contain:
-- A clear statement of what attracts the candidate to the role or field.
-- 1–2 relevant academic projects, modules, competitions, research experiences, or independent projects.
-- Specific evidence of what the candidate actually did.
-- The skills or intellectual capabilities developed through those experiences.
-- A connection between these experiences and the responsibilities of the target role.
+- use internet search to identify a list of recent, relevant, specific achievements and projects of the company that align with the job description.
+- identify 1–4 distinctive characteristics of the company that relate to the job description.
+
+Good to have:
+- 1–2 relevant academic projects, modules, competitions, research experiences, or independent projects from candidate context.
+- clear statements of what attracts the candidate to the role or job description.
 
 Structure:
-1. State the intersection of interests that makes the role attractive.
-2. Introduce the strongest academic/project evidence.
-3. Explain what the candidate learned or developed.
-4. Connect those capabilities to the role.
+1. Start with what makes the company interesting.
+2. Show how that philosophy manifests itself within the relevant division or function.
+3. Bring the candidate into the paragraph.
+4. Provide concrete proof that the company's philosophy produces real outcomes.
 
-Prioritise:
-- Intellectual curiosity
-- Analytical reasoning
-- Mathematical/statistical thinking
-- Modelling
-- Research
-- Problem-solving
-- Technical experimentation
-
-Do NOT:
-- Simply list university modules.
-- Repeat the CV verbatim.
-- Mention academic experiences without explaining their relevance.
-
-Target length: 100–140 words.
+Potential evidence:
+- Products or technological innovations
+- Business initiatives
+- Strategic investments
+- Recognised achievements
+- Awards
+- Specific projects
+- Quantifiable improvements
+- Recent developments
+The recognition must reinforce the argument being made.
 
 
-### PARAGRAPH 3 — PROFESSIONAL/TECHNICAL EXPERIENCE + CONTRIBUTION
+Prefer concrete examples over broad claims.
+The paragraph should answer:
+"What is distinctive about this company, why does that way of working suit me, and what evidence shows that the company actually operates this way?"
+It should make the motivation feel specific and researched, rather than simply saying that the company is innovative, collaborative, or successful.
+
+Do not:
+- List multiple awards
+- Describe the entire company
+- Explain every strategic pillar
+- Include unrelated company facts
+
+Target length: 200-250 words.
+
+
+### PARAGRAPH 3 — PROFESSIONAL/TECHNICAL/ACADEMIC EXPERIENCE + FIT INTO THE ROLE COMPANY
 
 Purpose:
 Demonstrate that the candidate can turn their interests into practical results.
 
 Must contain:
-- 1–2 of the candidate's most relevant professional or technical experiences.
+- 1–3 of the candidate's most relevant professional or academic experiences.
 - Concrete evidence of what they built, analysed, improved, or delivered.
-- Relevant technologies, methodologies, or domain knowledge where useful.
-- Quantifiable impact where credible and available.
-- A connection between the candidate's existing technical/professional capabilities and what they could contribute in the new role.
+- Relevant technologies, methodologies, or domain knowledge where useful relating to the job description.
+- A connection between candidate experiences and the responsibilities from the job description.
 
 Structure:
 1. Introduce the complementary capability gained from professional experience.
 2. Give a concrete example.
 3. Explain the resulting capability or impact.
-4. Connect this experience to the target role.
+4. Connect this experience to the target role or company values.
 
 The paragraph should demonstrate:
 "Here is what I have already learned to do → here is evidence that I can do it → here is why that matters for this role."
@@ -92,7 +99,7 @@ Do NOT:
 - Include irrelevant responsibilities.
 - Repeat information already established in Paragraph 2.
 
-Target length: 100–140 words.
+Target length: 200-250 words.
 
 
 ### PARAGRAPH 4 — SYNTHESIS + FUTURE MOTIVATION
@@ -206,20 +213,20 @@ Recommended distribution:
 
 3. CONNECT THE CANDIDATE TO THE COMPANY SPECIFICALLY
    - Use Internet Search to find information about the company's unique features, values, or recent developments.
-   - Identify 1–2 distinctive characteristics of the company that genuinely align with the candidate.
+   - Identify 1–2 distinctive characteristics of the company that genuinely align with the candidate and job title.
    - Explain WHY those characteristics matter to the candidate.
    - Avoid generic claims such as "your company is innovative" or "I admire your culture."
    - Whenever possible, reference a specific product, methodology, event, technology, business model, or cultural characteristic.
-   - The company should feel deliberately chosen rather than interchangeable with another employer.
+   - The points should feel specific and deliberately chosen rather than interchangeable with another company.
 
 4. CREATE A CLEAR "WHY THIS ROLE" ARGUMENT
    - Explain why the role sits at the intersection of the candidate's existing interests and capabilities.
-   - Connect multiple disciplines where appropriate (e.g. finance + statistics + computing).
+   - Connect disciplines where appropriate (e.g. finance + statistics + computing).
    - Show how previous experiences naturally led toward the role.
    - Avoid simply repeating the job description.
 
 5. USE EVIDENCE INSTEAD OF ASSERTIONS
-   - Whenever claiming a skill, support it with a concrete project, experience, achievement, or outcome.
+   - Whenever claiming a skill, support it with a project, experience, achievement, or outcome.
    - Replace "I have strong analytical skills" with evidence demonstrating analytical thinking.
    - Replace "I am passionate about technology" with evidence of building software, models, or data systems.
    - Every major capability claim should be traceable to candidate evidence.
@@ -273,7 +280,7 @@ Recommended distribution:
     - Do not overuse these devices.
 
 13. USE SPECIFIC TECHNICAL LANGUAGE WHEN RELEVANT
-    - Name relevant techniques, technologies, models, or methodologies when they demonstrate genuine experience.
+    - Name relevant techniques, technologies, models, or methodologies when they relate to the job description.
     - Examples: stochastic modelling, Python, PyTorch, REST APIs, statistical modelling, data pipelines.
     - Do not insert technical terminology merely to match keywords.
     - Explain the relevance of technical work where possible.
@@ -298,8 +305,7 @@ Recommended distribution:
 ## AUTHENTICITY RULES
 
 18. DO NOT FORCE COMPANY-SPECIFIC DETAILS
-    - Only mention company facts that are supported by reliable retrieved information from Internet Search.
-    - If a company-specific detail cannot be verified, omit it rather than inventing one.
+    - Only mention company facts that are supported by retrieved information from Internet Search.
 
 19. PRESERVE THE CANDIDATE'S MOTIVATION
     - Do not replace a nuanced motivation with generic enthusiasm.
