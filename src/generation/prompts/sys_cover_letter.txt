@@ -10,9 +10,9 @@ Purpose:
 Establish an authentic connection to the company and explain why the candidate became interested in it. Explain why the role itself is a natural fit for the candidate's interests.
 
 Must contain:
-- A fabricated but convincing personal experience, event, project, product, interaction, or discovery that introduced the candidate to the company or its area of work.
+- using internet search, identify a suitable event located in London, UK that connects the candidate to the company or its area of work.
 - A brief reflection on what the experience made the candidate realise, question, or become interested in.
-- A transition from this experience to the company.
+- A transition from this experience to what is interesting about the company.
 - using internet search, identify 1–2 distinctive characteristics of the company (such as values, relevant projects to job description) that explain why the candidate is particularly drawn to it.
 - A clear connection between those characteristics and the candidate's own interests or way of working.
 
@@ -32,10 +32,9 @@ Target length: 150-250 words.
 ### PARAGRAPH 2 — WHY THIS COMPANY IS IMPORTANT + WHY THE CANDIDATE WANTS TO WORK THERE
 
 Purpose:
-Establish why the candidate is specifically attracted to the company's operating model, and demonstrate that this preference is grounded in both the candidate's own working style and the company's observable business/technology outcomes.
+Show off the depth of company knowledge and achievements. Establish why the candidate is specifically attracted to the company's operating model, and demonstrate that this preference is grounded in both the candidate's own working style and the company's observable business/technology outcomes.
 
 Must contain:
-- use internet search to identify a list of recent, relevant, specific achievements and projects of the company that align with the job description.
 - identify 1–4 distinctive characteristics of the company that relate to the job description.
 
 Good to have:

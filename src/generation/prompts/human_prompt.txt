@@ -6,7 +6,7 @@ TARGET ROLE: {role_title}
 JOB DESCRIPTION:
 {job_description}
 
-CANDIDATE CONTEXT (from RAG retrieval):
+CANDIDATE CONTEXT AND RELEVANT EXPERIENCES:
 {retrieved_context}
 
 TASK: 
@@ -19,8 +19,10 @@ cover letter that:
 
 ## EXAMPLE OUTPUT (One-shot)
 
-When I signed up for the Estimathon hosted by UCL Fintech, I could not anticipate how engaging the experience would be. Its deliberately unconventional problems pushed me to think more creatively and reflect on how I approach uncertainty, where a conventional answer can come from many different sources. Curiously, it was also my first introduction to Jane Street: a firm I have since come to admire for combining quantitative rigour with technology to solve complex market problems. Jane Street differentiates itself on its strong emphasis on leveraging technology, alongside fluid collaboration between trading, research and engineering, which strongly aligns with my own interests and the kind of environment that fosters a sense of cohesion imperative for building successful strategies.
+My visit to the UBS History Exhibition felt like stepping into living narrative, deeply rooted in Swiss infrastructure and defined by continuous reinvention. My name is Simon and I am passionate about helping shape the next chapter of UBS’s story, following the landmark acquisition of Credit Suisse.
 
-Quantitative Analytics represents the ideal intersection of my interests in financial modelling, statistics and computing. I have explored this through developing stochastic models that were central to my trading project, and further strengthened these skills through mathematical modelling in the Economics Skills Lab. Alongside this, my experience building software and data systems has given me a strong technical foundation needed for designing experimental ideas into reality. I am excited by the opportunity to apply my skills in a new role that is better aligned to my strengths and interests, while continuing to learn from challenging, high-impact work.
+UBS stands out as a bank dedicated to a strong strategic focus of driving business outcomes collaboratively. The investment banking division can be seen at the centre of the ‘one UBS’ model, delivering cross-functional insights to other departments with quality recognised as Europe’s best FX bank. I have thrived in environments with a holistic view of processes, where Business Managers act as the link between front-to-back functions that leave them best poised to drive enhancements. These philosophies have been key to solidify UBS’s status as the world’s best bank for trading technology (Euromoney 2025), with innovations such as improved FX distribution latency and Cloud FinOps dashboards.
 
-Quantitative Analytics represents the perfect fusion of my passion for financial modelling, statistics and computing. This is something I have personally discovered by producing my very own stochastic models that became critical to the delivery of my trading project, refined through my participation in the supplementary Economics Skills Lab. Combined with my strong technical background in building software and data systems, I am excited to combine my passion for technology and finance in a new role that is better aligned with my interests and strength, whilst continuing to contribute to exciting work that will keep me stimulated.
+Through my experience, I have developed technical and analytical skills that align strongly with this position. I have contributed to many transformation initiatives that improved workflows and access to information in a banking environment, including enhancing a retrieval-augmented generation (RAG) model to generate more efficient insights from proprietary banking datasets. In addition, my roles within operational risk consolidated my understanding of regulatory frameworks and the importance of controls, accuracy, and stakeholder collaboration in high-performing environments. Alongside my technical experience, I have maintained a strong interest in financial markets through banking certifications, market awareness, and experience as an investment analyst. I am particularly drawn to the fast-paced and collaborative nature of Global Markets and would value the opportunity to contribute to UBS’s FX & Rates COO team while continuing to learn from industry-leading professionals.
+
+Thank you for considering my application. I would welcome the opportunity to discuss how my analytical, technical, and commercial skillset could contribute to the Zurich team.
